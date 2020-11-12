@@ -1,0 +1,49 @@
+import java.util.Scanner;
+class Stone
+{
+	public static void main(String[] args)
+	{
+		int S=0,R=0;
+		Scanner vc = new Scanner(System.in);
+		System.out.println(" Enter No Of Samples and Ranges");
+		S=vc.nextInt();
+		R=vc.nextInt();
+		
+		int arr[] = new int[S];
+		int arr1[][] = new int[R][2];
+		int arr2[] = new int[R];
+		
+		System.out.println("Enter Samples");
+		for(int i=0;i<S;i++)
+		{
+			arr[i]=vc.nextInt();
+		}
+		
+		System.out.println("Enter Ranges");
+		for(int i=0;i<R;i++)
+		{
+			arr1[i][0]=vc.nextInt();
+			arr1[i][1]=vc.nextInt();
+		}
+		
+		for(int i=0;i<S;i++)
+		{
+			for(int j=0;j<R;j++)
+			{
+			
+				if(arr[i]>=arr1[j][0] && arr[i]<=arr1[j][1])
+				{	
+				   arr2[j]+=1;
+				}
+			}
+		}
+		
+		for(int i=0;i<R;i++)
+		{
+			System.out.println(arr2[i]);
+		}	
+		
+		
+	}
+
+}
